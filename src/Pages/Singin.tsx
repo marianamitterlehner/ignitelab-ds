@@ -1,6 +1,7 @@
 
 //import Logo from '../images/logo.svg'
 import { Envelope, Lock } from 'phosphor-react';
+import { FormEvent, useState } from 'react';
 import { Button } from '../components/Button';
 import { Checkbox } from '../components/Checkbox';
 import { Heading } from '../components/Heading';
@@ -8,7 +9,25 @@ import { Text } from '../components/Text';
 import { TextInput } from '../components/TextInput';
 import { Logo } from '../images/Logo';
 
+import axios from 'axios';
+
+
+
 export function SignIn() {
+
+    const [userSignIn, setUserSingIn] = useState(false);
+
+    async function handleSubmit(event: FormEvent) {
+        event.preventDefault();
+
+        await axios.post('/sessiosn', {
+            email: 'maria@gmail.com',
+            password: '235846'
+        })
+
+        setUserSingIn(true)
+}
+
     return (
         <div className="w-screen h-screen bg-gray-900 flex flex-col items-center justify-center text-gray-100">
             <header className="flex flex-col items-center">
@@ -23,7 +42,10 @@ export function SignIn() {
                 </Text>
             </header>
 
-            <form className="flex flex-col gap-4 items-stretch w-full max-w-sm mt-10">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4 items-stretch w-full max-w-sm mt-10">
+                
+                {userSignIn && <Text>login realizado</Text>}
+
                 <label htmlFor="email" className="flex flex-col gap-3">
                     <Text className="font-semibold">Endereço de e-mail</Text>
                     <TextInput.Root>

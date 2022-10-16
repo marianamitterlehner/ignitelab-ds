@@ -1,5 +1,5 @@
 
-import { SignIn } from './Pages/Singin';
+import { SignIn } from './Pages/SingIn';
 
 import './styles/global.css';
 
