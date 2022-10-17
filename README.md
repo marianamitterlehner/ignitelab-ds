@@ -1,6 +1,7 @@
 ﻿# ignitelab-ds
 
-<a href="https://s3-alpha.figma.com/hub/file/2447595214/7ea28663-f395-4f17-a240-d26ea9d4b9ef-cover.png"/>
+<img src="https://s3-alpha.figma.com/hub/file/2447595214/7ea28663-f395-4f17-a240-d26ea9d4b9ef-cover.png">
+
 
 ## Objetivo 
 Do Figma ao React - semana intensiva em design system proporcionado pela Rocketseat
